@@ -1,4 +1,4 @@
 /build/*
-!/build/src/Debug/Resources/
+!/build/src/Debug/Resources/*
 /.vscode/*
 /.vs/*
