@@ -2,6 +2,8 @@
 
 int SDL_main(int argc, char* args[])
 {
+	std::cout << "Imagine a new feature was implemented\n";
+
 	//Init core
 	Core* core = new Core;
 	if (!core->init())
