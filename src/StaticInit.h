@@ -1,6 +1,5 @@
 #pragma once
 #include "Level0.h"
-#include "MainMenu.h"
 
 Core* Object::m_core = nullptr;
 Core* Level::m_core = nullptr;

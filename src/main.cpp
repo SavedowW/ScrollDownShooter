@@ -17,9 +17,9 @@ int SDL_main(int argc, char* args[])
 
 	//Init levels
 	Level* levels[2];
-	levels[(unsigned int)MenuLevels::MAINMENU] = new MainMenu((unsigned int)MenuLevels::MAINMENU);;
+	//levels[(unsigned int)MenuLevels::MAINMENU] = new MainMenu((unsigned int)MenuLevels::MAINMENU);;
 	levels[(unsigned int)MenuLevels::NONE + 0] = new Level0((unsigned int)MenuLevels::NONE + 0);
-	LevelResult levelRet = {0};
+	LevelResult levelRet = {1};
 
 	//Main level loop
 	while (levelRet.nextLvl != -1)

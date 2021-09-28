@@ -18,9 +18,6 @@ BattleLevel.cpp
 Enemies.cpp
 Level.cpp
 Level0.cpp
-MainMenu.cpp
-Menu.cpp
-MenuPointer.cpp
 Object.cpp
 Particle.cpp
 Player.cpp
