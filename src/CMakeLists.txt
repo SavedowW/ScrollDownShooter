@@ -28,6 +28,7 @@ Shooter.cpp
 set(INCLUDE_DIRS
 ${CMAKE_CURRENT_LIST_DIR}
 ${CMAKE_CURRENT_LIST_DIR}/Core
+${CMAKE_CURRENT_LIST_DIR}/MenuBase
 ${SDL2_INCLUDE_DIRS}
 ${SDL2_IMAGE_INCLUDE_DIRS}
 ${SDL2_TTF_INCLUDE_DIRS}
@@ -46,6 +47,7 @@ ${SDL2_GFX_LIBRARIES}
 add_executable (${PROJECT_NAME} ${SRC_FILES})
 
 add_subdirectory (Core)
+add_subdirectory (MenuBase)
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 23)
 

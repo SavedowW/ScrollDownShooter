@@ -13,6 +13,9 @@ struct LevelResult
 
 enum class MenuLevels { MAINMENU, NONE };
 
+/*
+TODO: move level interface, required for objects, to another abstract class
+*/
 //Base level class
 class Level : public InputReactor
 {
