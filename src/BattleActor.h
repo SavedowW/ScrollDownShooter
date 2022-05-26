@@ -15,6 +15,7 @@ public:
 	const virtual Vector2 &getShootDir();
 
 	virtual ~BattleActor();
+	int newVar;
 
 protected:
 	int m_HP;
