@@ -3,8 +3,10 @@ cmake_minimum_required (VERSION 3.20)
 project(MenuBase)
 
 set(MENUBASE_SRC_FILES
-MenuElement.cpp
 AbstractMenu.cpp
+AbstractMenuItem.cpp
+StringMenuItem.cpp
+TextVerticalMenu.cpp
 )
 
 add_library (MenuBase ${MENUBASE_SRC_FILES})

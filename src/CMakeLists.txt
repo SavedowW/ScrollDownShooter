@@ -52,4 +52,4 @@ add_subdirectory (MenuBase)
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 23)
 
 include_directories(${INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} Core)
+target_link_libraries(${PROJECT_NAME} Core MenuBase)

@@ -120,6 +120,10 @@ bool Animation::isFinished()
 	case (LOOPMETHOD::SWITCH_DIR_LOOP):
 		return false;
 		break;
+	
+	default:
+		return false;
+		break;
 	}
 }
 

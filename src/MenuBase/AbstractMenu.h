@@ -15,6 +15,7 @@ class AbstractMenu : public AbstractMenuItem
 {
 public:
     AbstractMenu(const std::string &name_,  bool isSelectable_ = true);
+    const std::string &getMenuName();
     void resize(int size_);
     int size();
     int getSelected();

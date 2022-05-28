@@ -1,4 +1,5 @@
 #include "StaticInit.h"
+#include "TextVerticalMenu.h"
 
 int SDL_main(int argc, char* args[])
 {

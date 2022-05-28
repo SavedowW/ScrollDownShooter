@@ -35,9 +35,9 @@ int AbstractMenu::getSelected()
     return m_selected;
 }
 
-const std::string &getMenuName()
+const std::string &AbstractMenu::getMenuName()
 {
-    
+    return m_name;
 }
 
 ItemHolderPtr AbstractMenu::operator[](int id_)
