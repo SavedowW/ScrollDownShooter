@@ -1,6 +1,7 @@
 #ifndef GRAPHIC_MENU_H_
 #define GRAPHIC_MENU_H_
-#include "StringMenuItem.h"
+#include "AbstractMenu.h"
+#include <stack>
 
 class GraphicMenu
 {
