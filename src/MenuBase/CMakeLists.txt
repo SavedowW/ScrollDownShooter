@@ -7,6 +7,7 @@ AbstractMenu.cpp
 AbstractMenuItem.cpp
 StringMenuItem.cpp
 TextVerticalMenu.cpp
+GraphicMenu.cpp
 )
 
 add_library (MenuBase ${MENUBASE_SRC_FILES})
