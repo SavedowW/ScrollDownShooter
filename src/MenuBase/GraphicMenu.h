@@ -9,7 +9,7 @@ public:
     void update(const float frameTime_);
 	void draw();
 
-    //
+    //Menu level will call input
     void up();
     void down();
     void left();
