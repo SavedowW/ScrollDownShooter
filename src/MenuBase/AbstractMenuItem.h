@@ -1,3 +1,5 @@
+#ifndef ABSTRACT_MENU_ITEM_H_
+#define ABSTRACT_MENU_ITEM_H_
 #include <string>
 #include <memory>
 #include <iostream>
@@ -22,3 +24,5 @@ protected:
     std::string m_name;
     bool m_isSelectable;
 };
+
+#endif

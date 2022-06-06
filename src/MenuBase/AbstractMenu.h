@@ -1,3 +1,5 @@
+#ifndef ABSTRACT_MENU_H_
+#define ABSTRACT_MENU_H_
 #include "StringMenuItem.h"
 #include <vector>
 
@@ -33,3 +35,5 @@ protected:
     int m_selected = 0;
 
 };
+
+#endif

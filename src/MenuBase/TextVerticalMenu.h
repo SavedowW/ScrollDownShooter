@@ -1,3 +1,5 @@
+#ifndef TEXT_VERTICAL_MENU_H_
+#define TEXT_VERTICAL_MENU_H_
 #include "AbstractMenu.h"
 #include <stack>
 
@@ -18,3 +20,5 @@ protected:
     std::stack<std::shared_ptr<AbstractMenu>> m_menus;
     std::shared_ptr<AbstractMenu> m_currentMenu;
 };
+
+#endif

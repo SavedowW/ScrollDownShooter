@@ -1,3 +1,5 @@
+#ifndef GRAPHIC_MENU_H_
+#define GRAPHIC_MENU_H_
 #include "StringMenuItem.h"
 
 class GraphicMenu
@@ -21,3 +23,5 @@ protected:
     std::stack<std::shared_ptr<AbstractMenu>> m_menus;
     std::shared_ptr<AbstractMenu> m_currentMenu;
 };
+
+#endif

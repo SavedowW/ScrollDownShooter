@@ -1,3 +1,5 @@
+#ifndef STRING_MENU_ITEM_H_
+#define STRING_MENU_ITEM_H_
 #include "AbstractMenuItem.h"
 
 class StringMenuItem : public AbstractMenuItem
@@ -8,3 +10,5 @@ public:
 private:
 
 };
+
+#endif
