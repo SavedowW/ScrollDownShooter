@@ -26,7 +26,7 @@ public:
 	virtual bool getPrecise();
 	virtual bool getState() = 0;
 
-	virtual ~Shooter();
+	virtual ~Shooter() = default;
 
 protected:
 	bool m_isPrecise = false;

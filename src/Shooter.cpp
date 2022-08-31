@@ -35,10 +35,6 @@ bool Shooter::getPrecise()
 	return m_isPrecise;
 }
 
-Shooter::~Shooter()
-{
-}
-
 
 // ========== SHOOTER BASIC ==============
 // Controlled by player

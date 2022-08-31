@@ -138,10 +138,6 @@ Vector2 BattleLevel::getSpawnPoint()
 	return spawnPoint;
 }
 
-BattleLevel::~BattleLevel()
-{
-}
-
 void BattleLevel::update()
 {
 	float frameTime = float(m_frameTimer->m_lastFrameTime) / 1000.0f;
@@ -169,8 +165,8 @@ void BattleLevel::update()
 	{
 		for (int i = 0; i < 3 ;++i)
 			create(std::shared_ptr<Object>(new Swarmer(this, m_player.get(), Vector2(rand() % int(m_size.x), -80))));
-		create(std::shared_ptr<Object>(new EnemyShip1<Shooter_sparkler_circular>(this, m_player.get(), Vector2(0, -80), Vector2(0, 1))));
-		create(std::shared_ptr<Object>(new EnemyShip1<Shooter_sparkler_circular>(this, m_player.get(), Vector2(m_size.x - 93, -80), Vector2(0, 1))));
+		create(std::shared_ptr<Object>(new EnemyShip1<Shooter_sparkler_targeted>(this, m_player.get(), Vector2(0, -80), Vector2(0, 1))));
+		create(std::shared_ptr<Object>(new EnemyShip1<Shooter_sparkler_targeted>(this, m_player.get(), Vector2(m_size.x - 93, -80), Vector2(0, 1))));
 		m_spawnTimer = 0;
 	}
 }

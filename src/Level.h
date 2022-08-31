@@ -35,7 +35,7 @@ public:
 	void input_quit(const float scale_) final;
 	static std::shared_ptr<Player> m_player;
 
-	virtual ~Level();
+	virtual ~Level() = default;
 
 	static Core* m_core;
 

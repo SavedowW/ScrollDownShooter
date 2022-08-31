@@ -19,10 +19,7 @@ public:
 		m_elementType = type_;
 	}
 
-	virtual ~MenuElement()
-	{
-
-	}
+	virtual ~MenuElement() = default;
 
 	MenuElementType m_elementType;
 	std::string m_name;

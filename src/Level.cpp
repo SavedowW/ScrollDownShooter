@@ -106,7 +106,3 @@ void Level::input_quit(const float scale_)
 	m_returnVal = { -1 };
 	m_isRunning = false;
 }
-
-Level::~Level()
-{
-}

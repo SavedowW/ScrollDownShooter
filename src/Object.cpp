@@ -50,7 +50,3 @@ void Object::setLevel(Level* level_)
 {
 	m_level = level_;
 }
-
-Object::~Object()
-{
-}

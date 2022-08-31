@@ -111,11 +111,6 @@ void Enemy<ParticleType>::moveSelf(const float frameTime_)
 	}
 }
 
-template<class ParticleType>
-Enemy<ParticleType>::~Enemy()
-{
-}
-
 // ========== SWARMER ==================
 // Swarmer slowly moves towards the player and explodes when nearby
 Swarmer::Swarmer(Level* level_, Player* player_, const Vector2& position_) :

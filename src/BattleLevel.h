@@ -22,7 +22,7 @@ public:
 
 	virtual Vector2 getSpawnPoint();
 
-	virtual ~BattleLevel();
+	virtual ~BattleLevel() = default;
 
 protected:
 	const Vector2 spawnPoint = m_core->targetResolution / 2 + Vector2(-50, 200);

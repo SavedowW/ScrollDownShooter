@@ -35,7 +35,7 @@ public:
 
 	static Core* m_core;
 
-	virtual ~Object();
+	virtual ~Object() = default;
 
 	OBJ_TAGS m_tag;
 	bool m_destroyed = false;

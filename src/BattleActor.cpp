@@ -34,7 +34,3 @@ const Vector2 &BattleActor::getShootDir()
 {
     return Vector2(0, 1);
 }
-
-BattleActor::~BattleActor()
-{
-}

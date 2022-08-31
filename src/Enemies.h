@@ -15,7 +15,7 @@ public:
 	virtual void reactOnDamage() override;
 	virtual void die() override;
 
-	virtual ~Enemy();
+	virtual ~Enemy() = default;
 
 protected:
 	bool m_touchedScreen = false;

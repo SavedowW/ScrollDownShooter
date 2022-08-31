@@ -14,7 +14,7 @@ public:
 
 	const virtual Vector2 &getShootDir();
 
-	virtual ~BattleActor();
+	virtual ~BattleActor() = default;
 
 protected:
 	int m_HP;

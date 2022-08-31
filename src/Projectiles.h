@@ -19,10 +19,7 @@ public:
 	virtual void update(const float frameTime_) override;
 	virtual void destroySelf();
 	virtual void draw() override;
-	virtual ~Projectile()
-	{
-		//Logger::print("Trying to destroy projectile...\n");
-	}
+	virtual ~Projectile() = default;
 	TARGETS m_target;
 
 protected:
