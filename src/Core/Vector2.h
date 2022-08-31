@@ -3,7 +3,7 @@
 #include <cmath>
 #include <iostream>
 
-const float PI = 3.1415;
+inline const float PI = 3.1415;
 
 struct Vector2
 {
