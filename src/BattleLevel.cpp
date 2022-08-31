@@ -2,7 +2,7 @@
 
 BattleLevel::BattleLevel(const Vector2& size_, int lvlId_) :
 	Level(size_, lvlId_),
-	m_background(std::unique_ptr<Background>(new Background(m_core)))
+	m_background(std::make_unique<Background>(m_core))
 {
 
 	m_core->input.subscribe(EVENTS::CTRL, this);
