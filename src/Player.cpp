@@ -26,9 +26,9 @@ Player::Player(Level* level_, const Vector2& position_) :
 	m_core->input.subscribe(EVENTS::CANCEL, dynamic_cast<InputReactor*>(this));
 	m_core->input.subscribe(EVENTS::SHIFT, dynamic_cast<InputReactor*>(this));
 
-	m_shooters.push_back(new Shooter_basic(m_level, &m_position, m_hitbox.getPos() + m_hitbox.getSize() / 2));
-	m_shooters.push_back(new Shooter_laser(m_level, &m_position, m_hitbox.getPos() + m_hitbox.getSize() / 2));
-	m_shooters.push_back(new Shooter_homing(m_level, &m_position, m_hitbox.getPos() + m_hitbox.getSize() / 2));
+	m_shooters.push_back(std::make_unique<Shooter_basic>(m_level, &m_position, m_hitbox.getPos() + m_hitbox.getSize() / 2));
+	m_shooters.push_back(std::make_unique<Shooter_laser>(m_level, &m_position, m_hitbox.getPos() + m_hitbox.getSize() / 2));
+	m_shooters.push_back(std::make_unique<Shooter_homing>(m_level, &m_position, m_hitbox.getPos() + m_hitbox.getSize() / 2));
 	m_shooter = m_shooters.begin();
 
 	m_offsetToCenter = m_hitbox.getPos() + m_hitbox.getSize() / 2;
@@ -166,7 +166,7 @@ void Player::draw()
 void Player::setLevel(Level* level_)
 {
 	m_level = level_;
-	for (Shooter* sh : m_shooters)
+	for (auto &sh : m_shooters)
 		sh->setLevel(level_);
 }
 
@@ -309,7 +309,5 @@ void Player::setPosition(const Vector2& pos_)
 
 Player::~Player()
 {
-	for (Shooter* sh : m_shooters)
-		delete sh;
 	Logger::print("Huh, I was destroyed\n");
 }

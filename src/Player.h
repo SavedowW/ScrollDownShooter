@@ -43,8 +43,8 @@ private:
 		IDLE
 	} m_currentAnimation;
 
-	std::vector<Shooter*> m_shooters;
-	std::vector<Shooter*>::iterator m_shooter;
+	std::vector<std::unique_ptr<Shooter>> m_shooters;
+	std::vector<std::unique_ptr<Shooter>>::iterator m_shooter;
 
 	Animation_t spr_heath;
 

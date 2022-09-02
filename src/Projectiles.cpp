@@ -96,7 +96,7 @@ void Projectile<ParticleType>::destroySelf()
 
 // ========== MISSLE 1 =============
 Bullet_missle1::Bullet_missle1(TARGETS target_, Level* level_, const Vector2& position_, const Vector2& direction_) :
-	Projectile(1, target_, level_, Hitbox(3, 10, 12, 12), SOUNDS::missle1_destroyed, position_, direction_ * 3200)
+	Projectile(2, target_, level_, Hitbox(3, 10, 12, 12), SOUNDS::missle1_destroyed, position_, direction_ * 3200)
 {
 	spr_idle = m_core->textureManager->getTexture(TEXTURES::missle1);
 }
@@ -124,7 +124,7 @@ void Projectile_sparkle::setAbsoluteSpeed(const float speed_)
 
 // ========== HOMING MISSLE =============
 Bullet_homing::Bullet_homing(TARGETS target_, Level* level_, const Vector2& position_, const Vector2& direction_) :
-	Projectile(2, target_, level_, Hitbox(3, 10, 12, 12), SOUNDS::homingMissle_death, position_, direction_ * 100)
+	Projectile(1, target_, level_, Hitbox(3, 10, 12, 12), SOUNDS::homingMissle_death, position_, direction_ * 100)
 {
 	spr_idle = Animation_t(new Animation(m_core, ANIMATIONS::torp_autoaim, 0.03));
 }
