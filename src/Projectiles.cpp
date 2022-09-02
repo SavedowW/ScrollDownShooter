@@ -68,7 +68,8 @@ void Projectile<Particle_hit1>::destroySelf()
 	if (!m_outfield)
 	{
 		std::shared_ptr<Particle_hit1> ptr = std::make_shared<Particle_hit1>(m_level, m_angle, m_position);
-		m_level->create(std::dynamic_pointer_cast<Object>(ptr));
+		//God save the reinterpret_pointer_cast
+		m_level->create(std::reinterpret_pointer_cast<Particle>(ptr));
 		m_core->soundManager->playSfx(m_deathSound);
 	}
 }
@@ -89,8 +90,8 @@ void Projectile<ParticleType>::destroySelf()
 	m_level->destroy(this);
 	if (!m_outfield)
 	{
-		Object* ptr = reinterpret_cast<Object*>(new ParticleType(m_level, m_position));
-		m_level->create(std::shared_ptr<Object>(ptr));
+		std::shared_ptr<ParticleType> ptr = std::make_shared<ParticleType>(m_level, m_position);
+		m_level->create(std::reinterpret_pointer_cast<Particle>(ptr));
 		m_core->soundManager->playSfx(m_deathSound);
 	}
 }
