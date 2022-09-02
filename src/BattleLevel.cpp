@@ -1,5 +1,6 @@
 #include "BattleLevel.h"
 
+
 BattleLevel::BattleLevel(const Vector2& size_, int lvlId_) :
 	Level(size_, lvlId_),
 	m_background(std::make_unique<Background>(m_core))

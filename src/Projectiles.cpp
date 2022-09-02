@@ -1,5 +1,6 @@
 #include "Projectiles.h"
 #include "Level.h"
+#include "Object.h"
 #include <memory>
 
 template<class ParticleType>
@@ -66,8 +67,8 @@ void Projectile<Particle_hit1>::destroySelf()
 	m_level->destroy(this);
 	if (!m_outfield)
 	{
-		Object* ptr = reinterpret_cast<Object*>(new Particle_hit1(m_level, m_angle, m_position));
-		m_level->create(std::shared_ptr<Object>(ptr));
+		std::shared_ptr<Particle_hit1> ptr = std::make_shared<Particle_hit1>(m_level, m_angle, m_position);
+		m_level->create(std::dynamic_pointer_cast<Object>(ptr));
 		m_core->soundManager->playSfx(m_deathSound);
 	}
 }

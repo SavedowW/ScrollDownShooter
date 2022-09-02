@@ -1,4 +1,5 @@
 #include "Level.h"
+#include "Object.h"
 
 Level::Level(const Vector2& size_, int lvlId_) :
 	InputReactor(&m_core->input),
