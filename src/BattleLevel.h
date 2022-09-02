@@ -33,8 +33,14 @@ protected:
 	void localEnterLogic() override;
 	void localLeaveLogic() override;
 
+	//Player and enemies
+	//Shared because also contains player pointer, but actually has sole ownership of everything else
 	std::vector<std::shared_ptr<Object>> m_actors;
+
+	//Bullets, missles, etc
 	std::vector<std::shared_ptr<Object>> m_projectiles;
+
+	//Temporary effects without interactions
 	std::vector<std::shared_ptr<Object>> m_particles;
 
 	std::list<Object*> m_toBeDestroyed;
