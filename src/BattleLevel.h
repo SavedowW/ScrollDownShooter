@@ -13,6 +13,7 @@ public:
 	bool checkStaticCollision(Object* self_) override;
 	std::shared_ptr<Object> checkBulletCollision(Object* self_, TARGETS tar_) override;
 	void create(std::shared_ptr<Object> obj_) override;
+	void create(std::shared_ptr<Particle> obj_) override;
 	void destroy(Object* obj_) override;
 	std::shared_ptr<Object> FindNearestObject(const Vector2& src_) override;
 	std::shared_ptr<Object> FindNearestAngleObject(const Vector2& src_) override;
@@ -41,7 +42,7 @@ protected:
 	std::vector<std::shared_ptr<Object>> m_projectiles;
 
 	//Temporary effects without interactions
-	std::vector<std::shared_ptr<Object>> m_particles;
+	std::vector<std::shared_ptr<Particle>> m_particles;
 
 	std::list<Object*> m_toBeDestroyed;
 

@@ -292,11 +292,11 @@ void Player::takeDamage(int damage_)
 	m_HP--;
 
 	//Should add delay to destruction sprite and probably move health to other class
-	Object* ptr = reinterpret_cast<Object*>(new Particle_expl2(m_level, Vector2(5 + 35 * m_HP + 16, 5 + 16)));
-	m_level->create(std::shared_ptr<Object>(ptr));
+	std::shared_ptr<Particle_expl2> ptr = std::make_shared<Particle_expl2>(m_level, Vector2(5 + 35 * m_HP + 16, 5 + 16));
+	m_level->create(std::reinterpret_pointer_cast<Particle>(ptr));
 
-	ptr = reinterpret_cast<Object*>(new Particle_expl3(m_level, getHitbox().getPos() + m_hitbox.getSize() / 2));
-	m_level->create(std::shared_ptr<Object>(ptr));
+	std::shared_ptr<Particle_expl3> ptr_ex = std::make_shared<Particle_expl3>(m_level, getHitbox().getPos() + m_hitbox.getSize() / 2);
+	m_level->create(std::reinterpret_pointer_cast<Particle>(ptr_ex));
 
 	setPosition(Vector2(640, 650) - m_offsetToCenter);
 	m_invincibilityTime = 3;

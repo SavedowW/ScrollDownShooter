@@ -83,8 +83,8 @@ void Enemy<ParticleType>::die()
 	m_level->destroy(this);
 	if (!m_offScreen)
 	{
-		Object* ptr = reinterpret_cast<Object*>(new ParticleType(m_level, m_position + m_hitbox.getSize() / 2));
-		m_level->create(std::shared_ptr<Object>(ptr));
+		std::shared_ptr<ParticleType> ptr = std::make_shared<ParticleType>(m_level, m_position + m_hitbox.getSize() / 2);
+		m_level->create(std::reinterpret_pointer_cast<Particle>(ptr));
 		m_core->soundManager->playSfx(m_deathSfx);
 	}
 }

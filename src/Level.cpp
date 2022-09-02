@@ -66,6 +66,11 @@ void Level::create(std::shared_ptr<Object> obj_)
 	throw std::runtime_error("create() should not be called without overriding");
 }
 
+void Level::create(std::shared_ptr<Particle> obj_)
+{
+	throw std::runtime_error("create() should not be called without overriding");
+}
+
 void Level::destroy(Object*)
 {
 	throw std::runtime_error("destroy() should not be called without overriding");

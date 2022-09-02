@@ -26,6 +26,7 @@ public:
 	virtual bool checkStaticCollision(Object* self_);
 	virtual std::shared_ptr<Object> checkBulletCollision(Object* self_, TARGETS tar_);
 	virtual void create(std::shared_ptr<Object> obj_);
+	virtual void create(std::shared_ptr<Particle> obj_);
 	virtual void destroy(Object*);
 	virtual std::shared_ptr<Object> FindNearestObject(const Vector2& src_);
 	virtual std::shared_ptr<Object> FindNearestAngleObject(const Vector2& src_);

@@ -44,14 +44,18 @@ void BattleLevel::create(std::shared_ptr<Object> obj_)
 		m_projectiles.push_back(obj_);
 		break;
 
-	case (OBJ_TAGS::PARTICLE):
-		m_particles.push_back(obj_);
-		break;
-
 	default:
 		throw std::runtime_error("Trying to create object without a tag");
 		break;
 	}
+}
+
+void BattleLevel::create(std::shared_ptr<Particle> obj_)
+{
+	if (obj_->m_tag != OBJ_TAGS::PARTICLE)
+		throw std::runtime_error("Trying to create particle without a OBJ_TAGS::PARTICLE tag");
+
+	m_particles.push_back(obj_);
 }
 
 /*
