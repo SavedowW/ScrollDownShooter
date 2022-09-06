@@ -21,15 +21,11 @@ void Level::enter()
 	m_frameTimer->begin();
 	m_player->setLevel(this);
 	setInputEnabled(true);
-
-	localEnterLogic();
 }
 
 void Level::leave()
 {
 	setInputEnabled(false);
-
-	localLeaveLogic();
 }
 
 LevelResult Level::proceed()
@@ -86,16 +82,6 @@ std::shared_ptr<Object> Level::FindNearestAngleObject(const Vector2& src_)
 {
 	throw std::runtime_error("FindNearestAngleObject() should not be called without overriding");
 	return nullptr;
-}
-
-//Override for specific logic of enter
-void Level::localEnterLogic()
-{
-	
-}
-
-void Level::localLeaveLogic()
-{
 }
 
 void Level::destroyRequested()

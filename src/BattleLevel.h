@@ -8,6 +8,8 @@ class BattleLevel : public Level
 {
 public:
 	BattleLevel(const Vector2& size_, int lvlId_);
+	void enter() override;
+	void leave() override;
 
 	//Functions for objects
 	bool checkStaticCollision(Object* self_) override;
@@ -31,8 +33,6 @@ protected:
 	void update() override;
 	void draw() override;
 	void destroyRequested() override;
-	void localEnterLogic() override;
-	void localLeaveLogic() override;
 
 	//Player and enemies
 	//Shared because also contains player pointer, but actually has sole ownership of everything else

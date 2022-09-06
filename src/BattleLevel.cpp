@@ -9,6 +9,25 @@ BattleLevel::BattleLevel(const Vector2& size_, int lvlId_) :
 	m_core->input.subscribe(EVENTS::CTRL, this);
 }
 
+void BattleLevel::enter()
+{
+	Level::enter();
+
+	m_actors.push_back(m_player);
+	m_player->setPosition(getSpawnPoint());
+	m_player->setInputEnabled(true);
+}
+
+void BattleLevel::leave()
+{
+	Level::leave();
+
+	m_actors.clear();
+	m_projectiles.clear();
+	m_particles.clear();
+	m_toBeDestroyed.clear();
+}
+
 bool BattleLevel::checkStaticCollision(Object* self_)
 {
 	Hitbox hBox = self_->getHitbox();
@@ -237,19 +256,4 @@ void BattleLevel::destroyRequested()
 		m_toBeDestroyed.erase(m_toBeDestroyed.begin());
 		counter--;
 	}
-}
-
-void BattleLevel::localEnterLogic()
-{
-	m_actors.push_back(m_player);
-	m_player->setPosition(getSpawnPoint());
-	m_player->setInputEnabled(true);
-}
-
-void BattleLevel::localLeaveLogic()
-{
-	m_actors.clear();
-	m_projectiles.clear();
-	m_particles.clear();
-	m_toBeDestroyed.clear();
 }

@@ -18,8 +18,8 @@ class Level : public InputReactor
 {
 public:
 	Level(const Vector2 &size_, int lvlId_);
-	void enter();
-	void leave();
+	virtual void enter(); //Should be called before level - specific enter
+	virtual void leave(); //Should be called before level - specific leave
 	LevelResult proceed();
 
 	//Functions to be called from Object
@@ -41,8 +41,6 @@ public:
 	static Core* m_core;
 
 protected:
-	virtual void localEnterLogic();
-	virtual void localLeaveLogic();
 	virtual void update() = 0;
 	virtual void draw() = 0;
 	virtual void destroyRequested();

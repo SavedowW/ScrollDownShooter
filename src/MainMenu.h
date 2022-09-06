@@ -7,12 +7,12 @@ class MainMenu : public Level, public ReactOnElementAction
 {
 public:
 	MainMenu(int lvlId_);
+	void enter() override;
+	void leave() override;
 
 	void reactOnElementAction(MenuElement* elem_) override;
 
 protected:
-	virtual void localEnterLogic() override;
-	virtual void localLeaveLogic() override;
 	virtual void update() override;
 	virtual void draw() override;
 

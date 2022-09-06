@@ -35,6 +35,21 @@ MainMenu::MainMenu(int lvlId_) :
 	settingsMenu->setPreviousMenu(m_currentMenu);
 }
 
+void MainMenu::enter()
+{
+	Level::enter();
+
+	m_player->setInputEnabled(false);
+	m_currentMenu->setInputEnabled(true);
+}
+
+void MainMenu::leave()
+{
+	Level::leave();
+
+	m_currentMenu->setInputEnabled(false);
+}
+
 void MainMenu::reactOnElementAction(MenuElement* elem_)
 {
 	switch (elem_->m_elementType)
@@ -107,17 +122,6 @@ void MainMenu::reactOnElementAction(MenuElement* elem_)
 	}
 		break;
 	}
-}
-
-void MainMenu::localEnterLogic()
-{
-	m_player->setInputEnabled(false);
-	m_currentMenu->setInputEnabled(true);
-}
-
-void MainMenu::localLeaveLogic()
-{
-	m_currentMenu->setInputEnabled(false);
 }
 
 void MainMenu::update()
